@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a1f44; /* deep blue */
+  color: #f1f1f1;
+  position: relative;
+  z-index: 1;
+}
+
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.gold {
+  color: #d4af37;
+  text-shadow: 0 0 5px #d4af37;
+}
+
+.typing {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  animation: typing 4s steps(30) infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #d4af37;
+}
+
+
+.section-title {
+  color: #d4af37;
+  font-size: 2rem;
+  text-align: center;
+  margin: 3rem 0 1rem;
+}
+
+#about, #projects, #contact {
+  padding: 0 2rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background-color: #132c66;
+  border-left: 4px solid #d4af37;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #d4af37;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+input, textarea {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #1f2f5e;
+  color: #f1f1f1;
+}
+
+button {
+  background-color: #d4af37;
+  border: none;
+  color: #0a1f44;
+  padding: 0.8rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e6c972;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+
+/* Particles container */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Individual particles */
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #d4af37; /* gold */
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+
+.contact-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  width: 50px;              /* fixed width */
+  height: 50px;             /* fixed height */
+  border-radius: 50%;       /* makes it circular */
+  display: flex;           /* center icon */
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0; /* optional background */
+  color: #333;              /* icon color */
+  font-size: 1.5rem;        /* icon size */
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+
+.contact-link.github {
+  background-color: #d4af37;
+  color: #0a1f44;
+}
+
+.contact-link.github:hover {
+  background-color: #e6c972;
+}
+
+.contact-link.phone {
+  background-color: transparent;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+}
+
+.contact-link.phone:hover {
+  background-color: #d4af37;
+  color: #0a1f44;
+}
+
+.contact-link.linkedin {
+  background-color: #0077b5;
+  color: white;
+}
+
+.contact-link.linkedin:hover {
+  background-color: #3399cc;
+  color: white;
+}
+
+.contact-link.whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+.contact-link.whatsapp:hover {
+  background-color: #3ee282;
+  color: white;
+}
+
+.contact-link i {
+  margin-right: 0.5rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
