@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <meta name="description" content="Personal portfolio terminal — Fallout-themed retro CRT interface">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230a0a0a'/><text x='5' y='24' font-size='22' fill='%2333ff33' font-family='monospace'>></text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ═══════════════ BOOT SCREEN ═══════════════ -->
+  <div id="boot-screen" class="boot-screen">
+    <div id="boot-text" class="boot-text"></div>
+    <div class="boot-skip">[ CLICK ANYWHERE TO SKIP ]</div>
+  </div>
+
+  <!-- ═══════════════ MAIN TERMINAL ═══════════════ -->
+  <div id="terminal" class="terminal hidden">
+
+    <!-- Scanline overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Header -->
+    <header class="terminal-header">
+      <span class="header-left">MUHAMMAD DZULKARNAIN'S OFFICIAL PORTFOLIO</span>
+      <span class="header-right" id="terminal-clock">00:00:00</span>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="terminal-nav" id="terminal-nav">
+      <button class="nav-item active" data-section="about">[1] ABOUT</button>
+      <button class="nav-item" data-section="stats">[2] STATS</button>
+      <button class="nav-item" data-section="projects">[3] PROJECTS</button>
+      <button class="nav-item" data-section="contact">[4] CONTACT</button>
+    </nav>
+
+    <!-- Content Area -->
+    <main class="terminal-content">
+
+      <!-- ── ABOUT ── -->
+      <section id="section-about" class="section active">
+        <h1 class="section-title">> PERSONAL_FILE <span class="cursor-blink">█</span></h1>
+        <div class="section-body typewrite-target">
+          <div class="about-block">
+
+            <div class="about-info">
+              <p class="terminal-line"><span class="label">FULL NAME:</span> <span class="value">Muhammad Dzulkarnain
+                  Bin
+                  Mohd Zi Izani</span></p>
+              <p class="terminal-line"><span class="label">TITLE:</span> <span class="value">Backend Developer</span>
+              </p>
+              <p class="terminal-line"><span class="label">LOCATION:</span> <span class="value">Petaling
+                  Jaya,Selangor</span></p>
+              <!-- <p class="terminal-line"><span class="label">CLEARANCE:</span> <span class="value highlight">LEVEL 5 — UNRESTRICTED</span></p> -->
+            </div>
+          </div>
+          <div class="divider">════════════════════════════════════════════════════</div>
+          <p class="terminal-paragraph">
+            I’m a backend developer who focuses on building secure APIs and solid systems that just work. From handling
+            payments to keeping user data safe, I enjoy solving the tricky problems that happen behind the scenes.
+          </p>
+          <p class="terminal-paragraph">
+            I aim for clean code, fast databases, and servers that won't let you down. I'm all about making the
+            technical side of things simple and reliable so everything runs smoothly.
+          </p>
+          <div class="divider">════════════════════════════════════════════════════</div>
+          <p class="prompt-line">> READY. SELECT OPTION FROM MENU TO CONTINUE_</p>
+        </div>
+      </section>
+
+      <!-- ── STATS ── -->
+      <section id="section-stats" class="section">
+        <h1 class="section-title">> S.P.E.C.I.A.L. ASSESSMENT <span class="cursor-blink">█</span></h1>
+        <div class="section-body">
+          <p class="terminal-paragraph dimmed">VAULT-TEC APTITUDE EVALUATION — TECHNICAL SKILLS</p>
+          <div class="divider">════════════════════════════════════════════════════</div>
+
+          <div class="stat-group">
+            <div class="stat-row" data-level="9">
+              <span class="stat-label">HTML / CSS</span>
+              <div class="stat-bar">
+                <div class="stat-fill" style="--target-width:90%"></div>
+              </div>
+              <span class="stat-value">9</span>
+            </div>
+            <div class="stat-row" data-level="9">
+              <span class="stat-label">PHP</span>
+              <div class="stat-bar">
+                <div class="stat-fill" style="--target-width:90%"></div>
+              </div>
+              <span class="stat-value">9</span>
+            </div>
+            <div class="stat-row" data-level="8">
+              <span class="stat-label">JavaScript</span>
+              <div class="stat-bar">
+                <div class="stat-fill" style="--target-width:80%"></div>
+              </div>
+              <span class="stat-value">8</span>
+            </div>
+            <div class="stat-row" data-level="8">
+              <span class="stat-label">Databases</span>
+              <div class="stat-bar">
+                <div class="stat-fill" style="--target-width:80%"></div>
+              </div>
+              <span class="stat-value">8</span>
+            </div>
+            <div class="stat-row" data-level="6">
+              <span class="stat-label">UI / UX</span>
+              <div class="stat-bar">
+                <div class="stat-fill" style="--target-width:60%"></div>
+              </div>
+              <span class="stat-value">6</span>
+            </div>
+          </div>
+
+          <div class="divider">════════════════════════════════════════════════════</div>
+
+          <div class="perks-section">
+            <p class="terminal-paragraph"><span class="label">PERKS ACQUIRED:</span></p>
+            <ul class="perk-list">
+              <li>☢ <span class="highlight">Adaptability</span> — Quickly learns and applies new technologies with
+                minimal ramp-up time</li>
+              <li>☢ <span class="highlight">Focused Productivity</span> — Maintains high concentration during deep-work
+                sessions and tight deadlines</li>
+              <li>☢ <span class="highlight">Analytical Problem-Solving</span> — Systematically identifies root causes
+                and resolves complex technical issues</li>
+              <li>☢ <span class="highlight">Collaborative Mindset</span> — Communicates clearly and contributes
+                effectively within cross-functional teams</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PROJECTS ── -->
+      <section id="section-projects" class="section">
+        <h1 class="section-title">> PROJECT_DATABASE <span class="cursor-blink">█</span></h1>
+        <div class="section-body">
+          <p class="terminal-paragraph dimmed">ACCESSING ARCHIVED PROJECT FILES…</p>
+          <div class="divider">════════════════════════════════════════════════════</div>
+
+          <div class="project-grid">
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-id">[PROJ-P001]</span>
+                <span class="project-status online">● ONLINE</span>
+              </div>
+              <h2 class="project-name">Ballz Website</h2>
+              <p class="project-desc">The main web hub for Ballz. A clean, simple site to showcase what the brand is all
+                about.</p>
+              <div class="project-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Javascript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/dzulkarnain761/Ballz" class="terminal-link">[VIEW SOURCE]</a>
+                <a href="https://dzulkn.com/Ballz" class="terminal-link">[LIVE]</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-id">[PROJ-P002]</span>
+                <span class="project-status offline">● ARCHIVED</span>
+              </div>
+              <h2 class="project-name">Ballz Mobile Application</h2>
+              <p class="project-desc">An easy-to-use app for ordering food on the go. It’s got a rewards system built-in
+                for the fans.</p>
+
+              <div class="project-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/dzulkarnain761/ballz-app" class="terminal-link">[VIEW SOURCE]</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-id">[PROJ-P003]</span>
+                <span class="project-status online">● ONLINE</span>
+              </div>
+              <h2 class="project-name">Ballz REST API</h2>
+              <p class="project-desc">The engine under the hood. It connects the mobile side of things with the data it
+                needs to run.</p>
+              <div class="project-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/dzulkarnain761/Ballz" class="terminal-link">[VIEW SOURCE]</a>
+                <a href="https://dzulkn.com/Ballz/api/documentation" class="terminal-link">[VIEW DOCUMENTATION]</a>
+              </div>
+            </div>
+
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-id">[PROJ-W001]</span>
+                <span class="project-status offline">● ARCHIVED</span>
+              </div>
+              <h2 class="project-name">E-Insket</h2>
+              <p class="project-desc">Helping schools find and book accommodation without the fuss. Simple, useful, and
+                reliable.</p>
+              <div class="project-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <div class="project-links">
+                <!-- <a href="#" class="terminal-link">[CASE STUDY]</a> -->
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-id">[PROJ-W002]</span>
+                <span class="project-status online">● ONLINE</span>
+              </div>
+              <h2 class="project-name">E-Jentera</h2>
+              <p class="project-desc">A straightforward booking tool for farmers to get their machinery serviced. Less
+                paperwork, more farming.</p>
+              <div class="project-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <div class="project-links">
+                <a href="https://apps.lktn.gov.my/eJentera/" class="terminal-link">[LIVE]</a>
+
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-id">[PROJ-W003]</span>
+                <span class="project-status online">● ONLINE</span>
+              </div>
+              <h2 class="project-name">E-Perubatan</h2>
+              <p class="project-desc">Making it way easier for government staff to claim their medical expenses online.
+              </p>
+              <div class="project-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <div class="project-links">
+
+                <a href="https://www.lktn.gov.my/lktn/" class="terminal-link">[LIVE]</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CONTACT ── -->
+      <section id="section-contact" class="section">
+        <h1 class="section-title">> COMMUNICATIONS_RELAY <span class="cursor-blink">█</span></h1>
+        <div class="section-body">
+          <p class="terminal-paragraph dimmed">ESTABLISHING SECURE CONNECTION…</p>
+          <div class="divider">════════════════════════════════════════════════════</div>
+
+
+          <div class="contact-channels">
+            <p class="terminal-line"><span class="label">EMAIL:</span> <a href="mailto:your@email.com"
+                class="terminal-link">dzulkarnain761@gmail.com</a></p>
+            <p class="terminal-line"><span class="label">GITHUB:</span> <a href="https://github.com/dzulkarnain761"
+                class="terminal-link" target="_blank">github.com/dzulkarnain761</a></p>
+            <p class="terminal-line"><span class="label">INSTAGRAM:</span> <a href="https://instagram.com/dzulkn"
+                class="terminal-link" target="_blank">@dzulkn</a></p>
+          </div>
+
+          <div class="divider">════════════════════════════════════════════════════</div>
+
+          <form id="contact-form" class="contact-form" onsubmit="return false;">
+            <p class="terminal-paragraph">SEND TRANSMISSION:</p>
+            <div class="form-group">
+              <label for="contact-name" class="form-label">> CALLSIGN:</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="Enter your name..."
+                autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="contact-email" class="form-label">> FREQ:</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="Enter your email..."
+                autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="contact-message" class="form-label">> MESSAGE:</label>
+              <textarea id="contact-message" class="form-input form-textarea" placeholder="Enter your message..."
+                rows="5"></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="contact-submit">[TRANSMIT]</button>
+            <p id="form-status" class="form-status"></p>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="terminal-footer">
+      <span class="footer-left" id="footer-status">STATUS: OPERATIONAL</span>
+      <span class="footer-center">DZULKN © 2026</span>
+      <span class="footer-right">PRESS [1-4] TO NAVIGATE</span>
+    </footer>
+
+  </div>
+
+  <!-- Audio (optional ambient) -->
+  <audio id="audio-keystroke" preload="auto">
+    <source src="crt_hum.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
