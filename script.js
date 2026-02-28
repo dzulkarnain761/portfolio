@@ -16,6 +16,9 @@
   const contactForm = document.getElementById('contact-form');
   const formStatus  = document.getElementById('form-status');
 
+  // ── Audio ──
+  const tabChangeAudio = document.getElementById('audio-tab-change');
+
   // ══════════════════════════════════════
   //  BOOT SEQUENCE
   // ══════════════════════════════════════
@@ -37,7 +40,25 @@
 
   let isBootSkipped = false;
 
+  // Helper: fade out an audio element over a duration (ms)
+  function fadeOutAudio(audio, duration = 800) {
+    const steps = 20;
+    const stepTime = duration / steps;
+    const volumeStep = audio.volume / steps;
+    const fade = setInterval(() => {
+      if (audio.volume - volumeStep <= 0) {
+        audio.volume = 0;
+        audio.pause();
+        clearInterval(fade);
+      } else {
+        audio.volume -= volumeStep;
+      }
+    }, stepTime);
+  }
+
   async function runBootSequence() {
+    
+    
     // Add skip listener
     const skipHandler = () => {
       isBootSkipped = true;
@@ -67,6 +88,8 @@
     bootScreen.style.display = 'none';
     terminal.classList.remove('hidden');
     
+   
+
     // Cleanup skip listener
     bootScreen.removeEventListener('click', skipHandler);
 
@@ -122,6 +145,13 @@
 
   function navigateTo(sectionName) {
     if (sectionName === currentSection) return;
+
+    // Play tab-change sound
+    if (tabChangeAudio) {
+      tabChangeAudio.currentTime = 0;
+      tabChangeAudio.volume = 0.4;
+      tabChangeAudio.play().catch(() => {});
+    }
 
     // Flash effect
     const flash = document.createElement('div');
@@ -253,19 +283,8 @@
     });
   }
 
-  // ══════════════════════════════════════
-  //  AMBIENT CRT SOUND (subtle, optional)
-  // ══════════════════════════════════════
+ 
 
-  // The audio element is a silent stub. Replace the src with an actual
-  // ambient CRT hum WAV/MP3 for full effect. Uncomment below to enable:
-  //
-  const ambientAudio = document.getElementById('audio-keystroke');
-  ambientAudio.loop = true;
-  ambientAudio.volume = 0.50;
-  document.addEventListener('click', () => ambientAudio.play(), { once: true });
-
-  
 
   // ══════════════════════════════════════
   //  INIT
