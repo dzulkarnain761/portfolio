@@ -17,6 +17,7 @@
   const formStatus  = document.getElementById('form-status');
 
   // ── Audio ──
+  const bootAudio     = document.getElementById('audio-boot');
   const tabChangeAudio = document.getElementById('audio-tab-change');
 
   // ══════════════════════════════════════
@@ -88,7 +89,10 @@
     bootScreen.style.display = 'none';
     terminal.classList.remove('hidden');
     
-   
+    // Fade out boot sound when terminal appears
+    if (bootAudio && !bootAudio.paused) {
+      fadeOutAudio(bootAudio, 800);
+    }
 
     // Cleanup skip listener
     bootScreen.removeEventListener('click', skipHandler);
